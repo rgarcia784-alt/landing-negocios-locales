@@ -137,7 +137,7 @@
     z-index:2;
   }
   .demo-hero{
-    background:linear-gradient(160deg, #7A2E2E, #A8452F);
+    background:linear-gradient(160deg, #2E4E6B, #3E6B8A);
     padding:22px 16px 18px;
     color:#fff;
   }
@@ -218,7 +218,7 @@
   /* ---------- PRECIO ---------- */
   .price-section{ background:var(--navy); border-radius:28px; margin:0 auto; max-width:1080px; padding:56px 24px; color:var(--paper); }
   .price-section .wrap{ padding:0; }
-  .price-grid{ display:grid; grid-template-columns:1.2fr 1fr; gap:48px; align-items:center; }
+  .price-grid{ display:block; }
   .price-section h2{ font-size:clamp(1.7rem, 3vw, 2.2rem); font-weight:600; color:#fff; }
   .price-section p{ margin-top:14px; color:rgba(250,246,238,0.75); line-height:1.6; }
   .price-card{
@@ -233,6 +233,19 @@
   .price-card li{ display:flex; gap:10px; padding:7px 0; font-size:0.88rem; color:rgba(250,246,238,0.85); }
   .price-card li .mark{ color:var(--gold-light); font-weight:700; }
   .price-card .btn-primary{ width:100%; justify-content:center; margin-top:24px; }
+  .price-cards-grid{ display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:36px; }
+  .price-card.subscription{ background:rgba(250,246,238,0.06); border:1px solid rgba(201,162,75,0.35); }
+  .price-card .badge-pop{
+    display:inline-block; background:var(--gold); color:var(--navy); font-size:0.68rem; font-weight:700;
+    letter-spacing:0.04em; padding:4px 10px; border-radius:100px; margin-bottom:10px;
+  }
+  .referral-box{
+    margin-top:18px; padding:14px 16px; background:rgba(201,162,75,0.12); border:1px solid rgba(201,162,75,0.3);
+    border-radius:14px; display:flex; gap:12px; align-items:flex-start;
+  }
+  .referral-icon{ font-size:1.3rem; line-height:1; }
+  .referral-box strong{ font-size:0.88rem; color:var(--gold-light); display:block; margin-bottom:4px; }
+  .referral-box p{ font-size:0.8rem; color:rgba(250,246,238,0.75); line-height:1.5; }
 
   .bank-block{
     margin-top:16px; padding-top:16px;
@@ -261,7 +274,7 @@
     .phone-stage{ order:-1; margin-bottom:20px; }
     .phone{ transform:rotate(0deg); width:240px; height:490px; }
     .split{ grid-template-columns:1fr; }
-    .price-grid{ grid-template-columns:1fr; }
+    .price-cards-grid{ grid-template-columns:1fr; }
     .steps{ grid-template-columns:1fr; }
     .hero{ padding-top:40px; }
   }
@@ -301,9 +314,9 @@
         <div class="phone">
           <div class="phone-screen">
             <div class="demo-hero">
-              <div class="biz">Taquería El Buen Sazón</div>
-              <div class="tag">Tacos al pastor · Zapopan</div>
-              <div class="cta">💬 Pedir por WhatsApp</div>
+              <div class="biz">Plomería Hernández</div>
+              <div class="tag">Fugas y reparaciones · A domicilio</div>
+              <div class="cta">💬 Pedir servicio por WhatsApp</div>
             </div>
             <div class="demo-body">
               <div class="demo-row">
@@ -312,9 +325,9 @@
                 <div class="demo-photo"></div>
               </div>
               <div class="demo-info">
-                <div class="line"><strong>Horario:</strong> 6pm – 1am</div>
+                <div class="line"><strong>Horario:</strong> 8am – 7pm</div>
                 <div class="line"><strong>Ubicación:</strong> Av. Patria 1450</div>
-                <div class="line"><strong>Servicio:</strong> Para llevar y domicilio</div>
+                <div class="line"><strong>Servicio:</strong> A domicilio, mismo día</div>
               </div>
               <div class="demo-map"></div>
             </div>
@@ -372,27 +385,57 @@
       <div>
         <h2>Precio simple, para que decidas rápido</h2>
         <p>La mayoría de los negocios (talleres, salones, tiendas, restaurantes, servicios) caben en el paquete base. Si tu caso es más grande, te cotizo antes de empezar — nunca después.</p>
-        <p>El pago se hace en dos partes: 50% de anticipo para arrancar y 50% contra entrega, cuando ya la viste lista y te gustó.</p>
+        <p>El pago de la construcción se hace en dos partes: 50% de anticipo y 50% contra entrega, cuando ya la viste lista y te gustó.</p>
       </div>
-      <div class="price-card">
-        <div class="from">Paquete base</div>
-        <div class="amount">$2,900</div>
-        <div class="unit">pesos mexicanos, pago único</div>
-        <ul>
-          <li><span class="mark">✓</span> Dominio incluido (3 opciones a elegir)</li>
-          <li><span class="mark">✓</span> Página lista en 3 a 5 días</li>
-          <li><span class="mark">✓</span> Diseño a tu medida, no plantilla</li>
-          <li><span class="mark">✓</span> Botón de WhatsApp integrado</li>
-          <li><span class="mark">✓</span> Hasta 6 fotos de tu negocio</li>
-          <li><span class="mark">✓</span> Una ronda de ajustes incluida</li>
-        </ul>
-        <a class="btn-primary" href="https://wa.me/523339675255?text=Hola%2C%20quiero%20cotizar%20mi%20p%C3%A1gina" target="_blank" rel="noopener">Cotizar la mía →</a>
-        <div class="bank-block">
-          <div class="label">También por transferencia</div>
-          <div class="bank-row"><span>Banco</span><strong>Citibanamex</strong></div>
-          <div class="bank-row"><span>CLABE</span><strong>0023 2070 2133 3528 47</strong></div>
-          <div class="bank-row"><span>A nombre de</span><strong>Rafael García Grado</strong></div>
-          <div class="bank-row" style="margin-top:6px; opacity:0.7; font-size:0.78rem;"><span>50% anticipo · 50% contra entrega</span></div>
+
+      <div class="price-cards-grid">
+        <div class="price-card">
+          <div class="from">Construcción de tu página</div>
+          <div class="amount">$2,900</div>
+          <div class="unit">pesos mexicanos, pago único</div>
+          <ul>
+            <li><span class="mark">✓</span> Dominio incluido (3 opciones a elegir)</li>
+            <li><span class="mark">✓</span> Página lista en 3 a 5 días</li>
+            <li><span class="mark">✓</span> Diseño a tu medida, no plantilla</li>
+            <li><span class="mark">✓</span> Botón de WhatsApp integrado</li>
+            <li><span class="mark">✓</span> Hasta 6 fotos de tu negocio</li>
+            <li><span class="mark">✓</span> Una ronda de ajustes incluida</li>
+          </ul>
+          <a class="btn-primary" href="https://wa.me/523339675255?text=Hola%2C%20quiero%20cotizar%20mi%20p%C3%A1gina" target="_blank" rel="noopener">Cotizar la mía →</a>
+          <div class="bank-block">
+            <div class="label">Transferencia o depósito en OXXO</div>
+            <div class="bank-row"><span>Banco</span><strong>Citibanamex</strong></div>
+            <div class="bank-row"><span>CLABE</span><strong>0023 2070 2133 3528 47</strong></div>
+            <div class="bank-row"><span>A nombre de</span><strong>Rafael</strong></div>
+            <div class="bank-row" style="margin-top:6px; opacity:0.7; font-size:0.78rem;"><span>También puedes depositar en efectivo en cualquier OXXO con esta CLABE</span></div>
+            <div class="bank-row" style="margin-top:2px; opacity:0.7; font-size:0.78rem;"><span>50% anticipo · 50% contra entrega</span></div>
+          </div>
+        </div>
+
+        <div class="price-card subscription">
+          <span class="badge-pop">Para que te encuentren</span>
+          <div class="from">Suscripción mensual</div>
+          <div class="amount">$500</div>
+          <div class="unit">pesos mexicanos, al mes</div>
+          <ul>
+            <li><span class="mark">✓</span> Tu página siempre activa y en línea</li>
+            <li><span class="mark">✓</span> Aparece en el directorio nacional</li>
+            <li><span class="mark">✓</span> Búsqueda por estado, municipio y colonia</li>
+            <li><span class="mark">✓</span> Enlace directo a tu WhatsApp desde el directorio</li>
+            <li><span class="mark">✓</span> Cancela cuando quieras</li>
+          </ul>
+          <a class="btn-primary" href="https://wa.me/523339675255?text=Hola%2C%20quiero%20la%20suscripci%C3%B3n%20mensual%20y%20aparecer%20en%20el%20directorio" target="_blank" rel="noopener">Quiero aparecer →</a>
+          <div class="bank-block">
+            <div class="label">Se cobra mes con mes, mismos datos</div>
+            <div class="bank-row" style="opacity:0.7; font-size:0.78rem;"><span>Transferencia, OXXO o WhatsApp para coordinar</span></div>
+          </div>
+          <div class="referral-box">
+            <div class="referral-icon">🎁</div>
+            <div>
+              <strong>Trae a otro negocio y tu mes siguiente sale gratis.</strong>
+              <p>Así de simple: cada negocio que recomiendes y se suscriba, te regala un mes. Sin límite.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -432,7 +475,7 @@
 </section>
 
 <footer>
-  tunegocio.page — hecho por Rafael García · Zapopan, Jalisco
+  tunegocio.page — hecho por Rafael · Con cobertura en todo México
 </footer>
 
 </body>
