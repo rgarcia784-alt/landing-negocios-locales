@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tu negocio necesita una página — Desde $2,900</title>
+<title>Tu negocio necesita una página — Desde $1,500 + $500/mes</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -229,11 +229,19 @@
   .price-card .from{ font-size:0.78rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--gold-light); font-weight:600; }
   .price-card .amount{ font-family:'Fraunces', serif; font-size:3rem; font-weight:600; margin:8px 0 4px; color:#fff; }
   .price-card .unit{ font-size:0.85rem; color:rgba(250,246,238,0.6); }
+  .price-card .amount-plus{
+    margin-top:10px; padding-top:14px; border-top:1px dashed rgba(250,246,238,0.15);
+    font-family:'Fraunces', serif; font-size:1.3rem; font-weight:600; color:var(--gold-light);
+  }
+  .price-card .amount-plus span{
+    display:block; font-family:'Outfit',sans-serif; font-size:0.78rem; font-weight:400; color:rgba(250,246,238,0.6); margin-top:2px;
+  }
   .price-card ul{ list-style:none; margin-top:22px; }
   .price-card li{ display:flex; gap:10px; padding:7px 0; font-size:0.88rem; color:rgba(250,246,238,0.85); }
   .price-card li .mark{ color:var(--gold-light); font-weight:700; }
   .price-card .btn-primary{ width:100%; justify-content:center; margin-top:24px; }
   .price-cards-grid{ display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:36px; }
+  .price-cards-grid.single{ grid-template-columns:1fr; max-width:480px; margin-left:auto; margin-right:auto; }
   .price-card.subscription{ background:rgba(250,246,238,0.06); border:1px solid rgba(201,162,75,0.35); }
   .price-card .badge-pop{
     display:inline-block; background:var(--gold); color:var(--navy); font-size:0.68rem; font-weight:700;
@@ -299,8 +307,8 @@
       <p class="lead">Te hago una página para tu negocio: fotos, ubicación, botón directo a tu WhatsApp y todo lo que necesitas para que un cliente nuevo te contacte en un clic — no en cinco.</p>
       <div class="price-badge">
         <span class="from">Desde</span>
-        <span class="amount">$2,900</span>
-        <span class="from">MXN</span>
+        <span class="amount">$1,500</span>
+        <span class="from">+ $500/mes</span>
       </div>
       <div class="hero-ctas">
         <a class="btn-primary" href="#precio">Ver qué incluye →</a>
@@ -384,50 +392,35 @@
     <div class="wrap price-grid">
       <div>
         <h2>Precio simple, para que decidas rápido</h2>
-        <p>La mayoría de los negocios (talleres, salones, tiendas, restaurantes, servicios) caben en el paquete base. Si tu caso es más grande, te cotizo antes de empezar — nunca después.</p>
-        <p>El pago de la construcción se hace en dos partes: 50% de anticipo y 50% contra entrega, cuando ya la viste lista y te gustó.</p>
+        <p>Una cuota inicial cubre la construcción de tu página, y una mensualidad ligera mantiene todo activo: tu dominio, tu WhatsApp integrado, y tu lugar en el directorio nacional para que te encuentren.</p>
+        <p>La mensualidad empieza a cobrarse hasta el segundo mes, cuando tu página ya está funcionando.</p>
       </div>
 
-      <div class="price-cards-grid">
-        <div class="price-card">
-          <div class="from">Construcción de tu página</div>
-          <div class="amount">$2,900</div>
+      <div class="price-cards-grid single">
+        <div class="price-card subscription">
+          <span class="badge-pop">Todo incluido</span>
+          <div class="from">Cuota inicial</div>
+          <div class="amount">$1,500</div>
           <div class="unit">pesos mexicanos, pago único</div>
+          <div class="amount-plus">+ $500 <span>al mes, desde el segundo mes</span></div>
           <ul>
+            <li><span class="mark">✓</span> Tu página construida a tu medida</li>
             <li><span class="mark">✓</span> Dominio incluido (3 opciones a elegir)</li>
-            <li><span class="mark">✓</span> Página lista en 3 a 5 días</li>
-            <li><span class="mark">✓</span> Diseño a tu medida, no plantilla</li>
             <li><span class="mark">✓</span> Botón de WhatsApp integrado</li>
             <li><span class="mark">✓</span> Hasta 6 fotos de tu negocio</li>
-            <li><span class="mark">✓</span> Una ronda de ajustes incluida</li>
+            <li><span class="mark">✓</span> Página lista en 3 a 5 días</li>
+            <li><span class="mark">✓</span> Aparece en el directorio nacional</li>
+            <li><span class="mark">✓</span> Búsqueda por estado, municipio y colonia</li>
+            <li><span class="mark">✓</span> Cancela cuando quieras</li>
           </ul>
-          <a class="btn-primary" href="https://wa.me/523339675255?text=Hola%2C%20quiero%20cotizar%20mi%20p%C3%A1gina" target="_blank" rel="noopener">Cotizar la mía →</a>
+          <a class="btn-primary" href="https://wa.me/523339675255?text=Hola%2C%20quiero%20mi%20p%C3%A1gina%20con%20la%20suscripci%C3%B3n%20mensual" target="_blank" rel="noopener">Quiero mi página →</a>
           <div class="bank-block">
             <div class="label">Transferencia o depósito en OXXO</div>
             <div class="bank-row"><span>Banco</span><strong>Citibanamex</strong></div>
             <div class="bank-row"><span>CLABE</span><strong>0023 2070 2133 3528 47</strong></div>
             <div class="bank-row"><span>A nombre de</span><strong>Rafael</strong></div>
             <div class="bank-row" style="margin-top:6px; opacity:0.7; font-size:0.78rem;"><span>También puedes depositar en efectivo en cualquier OXXO con esta CLABE</span></div>
-            <div class="bank-row" style="margin-top:2px; opacity:0.7; font-size:0.78rem;"><span>50% anticipo · 50% contra entrega</span></div>
-          </div>
-        </div>
-
-        <div class="price-card subscription">
-          <span class="badge-pop">Para que te encuentren</span>
-          <div class="from">Suscripción mensual</div>
-          <div class="amount">$500</div>
-          <div class="unit">pesos mexicanos, al mes</div>
-          <ul>
-            <li><span class="mark">✓</span> Tu página siempre activa y en línea</li>
-            <li><span class="mark">✓</span> Aparece en el directorio nacional</li>
-            <li><span class="mark">✓</span> Búsqueda por estado, municipio y colonia</li>
-            <li><span class="mark">✓</span> Enlace directo a tu WhatsApp desde el directorio</li>
-            <li><span class="mark">✓</span> Cancela cuando quieras</li>
-          </ul>
-          <a class="btn-primary" href="https://wa.me/523339675255?text=Hola%2C%20quiero%20la%20suscripci%C3%B3n%20mensual%20y%20aparecer%20en%20el%20directorio" target="_blank" rel="noopener">Quiero aparecer →</a>
-          <div class="bank-block">
-            <div class="label">Se cobra mes con mes, mismos datos</div>
-            <div class="bank-row" style="opacity:0.7; font-size:0.78rem;"><span>Transferencia, OXXO o WhatsApp para coordinar</span></div>
+            <div class="bank-row" style="margin-top:2px; opacity:0.7; font-size:0.78rem;"><span>La mensualidad se cobra a partir del segundo mes</span></div>
           </div>
           <div class="referral-box">
             <div class="referral-icon">🎁</div>
