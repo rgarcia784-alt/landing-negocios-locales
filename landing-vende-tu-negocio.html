@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tu negocio necesita una página — Desde $2,900</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#12213B;
+    --navy-2:#1B3358;
+    --gold:#C9A24B;
+    --gold-light:#E4C87A;
+    --paper:#FAF6EE;
+    --paper-2:#F1EAD9;
+    --ink:#1E1B16;
+    --line:rgba(18,33,59,0.12);
+    --green:#3E7A5E;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Outfit', sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{ font-family:'Fraunces', serif; }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 24px; }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation:none !important; transition:none !important; }
+  }
+
+  /* ---------- NAV ---------- */
+  .nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(250,246,238,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:1080px; margin:0 auto; padding:16px 24px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .brand{ font-family:'Fraunces', serif; font-weight:600; font-size:1.15rem; letter-spacing:-0.01em; color:var(--navy); }
+  .brand em{ font-style:italic; font-weight:500; color:var(--gold); }
+  .nav-cta{
+    background:var(--navy); color:var(--paper);
+    padding:10px 20px; border-radius:100px;
+    font-size:0.85rem; font-weight:500; text-decoration:none;
+    display:inline-flex; align-items:center; gap:8px;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .nav-cta:hover{ transform:translateY(-1px); box-shadow:0 6px 20px rgba(18,33,59,0.25); }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:76px 0 60px;
+    position:relative;
+  }
+  .hero-inner{
+    display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--green); font-weight:600; margin-bottom:20px;
+  }
+  .eyebrow::before{ content:''; width:7px; height:7px; border-radius:50%; background:var(--green); display:inline-block; }
+  .hero h1{
+    font-size:clamp(2.3rem, 5vw, 3.6rem);
+    line-height:1.05;
+    font-weight:600;
+    color:var(--navy);
+    letter-spacing:-0.02em;
+  }
+  .hero h1 .accent{
+    font-style:italic; font-weight:500; color:var(--gold);
+    position:relative;
+  }
+  .hero p.lead{
+    margin-top:22px; font-size:1.1rem; line-height:1.6; color:#4A4438; max-width:480px;
+  }
+  .price-badge{
+    margin-top:32px;
+    display:inline-flex; align-items:baseline; gap:10px;
+    background:var(--navy); color:var(--paper);
+    padding:18px 26px; border-radius:16px;
+  }
+  .price-badge .from{ font-size:0.8rem; opacity:0.7; }
+  .price-badge .amount{ font-family:'Fraunces', serif; font-size:1.9rem; font-weight:600; color:var(--gold-light); }
+  .hero-ctas{ margin-top:28px; display:flex; gap:14px; flex-wrap:wrap; }
+  .btn-primary{
+    background:var(--gold); color:var(--navy);
+    padding:15px 28px; border-radius:100px;
+    font-weight:600; font-size:0.95rem; text-decoration:none;
+    display:inline-flex; align-items:center; gap:8px;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 10px 24px rgba(201,162,75,0.4); }
+  .btn-secondary{
+    padding:15px 24px; border-radius:100px;
+    border:1.5px solid var(--line); color:var(--navy);
+    font-weight:500; font-size:0.95rem; text-decoration:none;
+  }
+
+  /* ---------- PHONE MOCK ---------- */
+  .phone-stage{ position:relative; display:flex; justify-content:center; }
+  .phone{
+    width:280px; height:568px;
+    background:var(--navy);
+    border-radius:38px;
+    padding:12px;
+    box-shadow:0 30px 60px -20px rgba(18,33,59,0.45), 0 0 0 1px rgba(18,33,59,0.05);
+    transform:rotate(2.5deg);
+  }
+  .phone-screen{
+    width:100%; height:100%;
+    background:var(--paper);
+    border-radius:28px;
+    overflow:hidden;
+    position:relative;
+    display:flex; flex-direction:column;
+  }
+  .demo-tag{
+    position:absolute; top:-14px; right:-10px;
+    background:var(--gold); color:var(--navy);
+    font-size:0.68rem; font-weight:700; letter-spacing:0.03em;
+    padding:6px 12px; border-radius:100px;
+    transform:rotate(4deg);
+    box-shadow:0 6px 14px rgba(201,162,75,0.35);
+    z-index:2;
+  }
+  .demo-hero{
+    background:linear-gradient(160deg, #7A2E2E, #A8452F);
+    padding:22px 16px 18px;
+    color:#fff;
+  }
+  .demo-hero .biz{ font-family:'Fraunces', serif; font-size:1.15rem; font-weight:600; }
+  .demo-hero .tag{ font-size:0.68rem; opacity:0.85; margin-top:4px; }
+  .demo-hero .cta{
+    margin-top:14px; background:#25D366; color:#fff;
+    font-size:0.72rem; font-weight:600;
+    padding:9px 14px; border-radius:8px;
+    display:inline-flex; align-items:center; gap:6px;
+  }
+  .demo-body{ padding:14px 16px; flex:1; }
+  .demo-row{ display:flex; gap:8px; margin-bottom:10px; }
+  .demo-photo{
+    flex:1; aspect-ratio:1; border-radius:10px;
+    background:linear-gradient(135deg, #E8DCC4, #D8C79E);
+  }
+  .demo-photo:nth-child(2){ background:linear-gradient(135deg, #D9C9A8, #C4AE7C); }
+  .demo-photo:nth-child(3){ background:linear-gradient(135deg, #E0D2B0, #CBB786); }
+  .demo-info{
+    margin-top:12px; padding:12px; background:var(--paper-2); border-radius:10px;
+  }
+  .demo-info .line{ font-size:0.68rem; color:#4A4438; margin-bottom:5px; display:flex; gap:6px; }
+  .demo-info .line strong{ color:var(--navy); }
+  .demo-map{
+    margin-top:10px; height:44px; border-radius:8px;
+    background:repeating-linear-gradient(45deg, #E4DCC7, #E4DCC7 4px, #D8CDAE 4px, #D8CDAE 8px);
+  }
+  .phone-caption{
+    text-align:center; margin-top:20px; font-size:0.85rem; color:#6B6455;
+  }
+  .phone-caption strong{ color:var(--navy); }
+
+  /* ---------- SECTION SHELL ---------- */
+  section{ padding:64px 0; }
+  .section-head{ max-width:600px; margin-bottom:44px; }
+  .section-head .eyebrow{ margin-bottom:14px; }
+  .section-head h2{
+    font-size:clamp(1.7rem, 3.2vw, 2.3rem); font-weight:600; color:var(--navy); letter-spacing:-0.01em; line-height:1.15;
+  }
+  .section-head p{ margin-top:14px; color:#5A5346; font-size:1rem; line-height:1.6; }
+
+  /* ---------- INCLUYE / NO INCLUYE ---------- */
+  .split{
+    display:grid; grid-template-columns:1fr 1fr; gap:28px;
+  }
+  .card{
+    border-radius:20px; padding:30px;
+  }
+  .card.yes{ background:var(--navy); color:var(--paper); }
+  .card.no{ background:#fff; border:1.5px solid var(--line); }
+  .card h3{
+    font-family:'Fraunces', serif; font-size:1.3rem; font-weight:600; margin-bottom:20px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .card.yes h3{ color:var(--gold-light); }
+  .card.no h3{ color:#9A5A3E; }
+  .card ul{ list-style:none; }
+  .card li{
+    display:flex; gap:12px; padding:10px 0;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    font-size:0.92rem; line-height:1.5;
+  }
+  .card.no li{ border-bottom:1px solid var(--line); }
+  .card li:last-child{ border-bottom:none; }
+  .card li .mark{ flex-shrink:0; font-weight:700; margin-top:1px; }
+  .card.yes li .mark{ color:var(--gold-light); }
+  .card.no li .mark{ color:#B0664A; }
+  .card.yes li span:last-child{ color:rgba(250,246,238,0.85); }
+  .card.no li span:last-child{ color:#5A5346; }
+
+  .note{
+    margin-top:20px; padding:16px 18px; background:var(--paper-2); border-radius:12px;
+    font-size:0.85rem; color:#5A5346; line-height:1.6;
+  }
+  .note strong{ color:var(--navy); }
+
+  /* ---------- PRECIO ---------- */
+  .price-section{ background:var(--navy); border-radius:28px; margin:0 auto; max-width:1080px; padding:56px 24px; color:var(--paper); }
+  .price-section .wrap{ padding:0; }
+  .price-grid{ display:grid; grid-template-columns:1.2fr 1fr; gap:48px; align-items:center; }
+  .price-section h2{ font-size:clamp(1.7rem, 3vw, 2.2rem); font-weight:600; color:#fff; }
+  .price-section p{ margin-top:14px; color:rgba(250,246,238,0.75); line-height:1.6; }
+  .price-card{
+    background:rgba(250,246,238,0.06);
+    border:1px solid rgba(250,246,238,0.15);
+    border-radius:20px; padding:32px;
+  }
+  .price-card .from{ font-size:0.78rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--gold-light); font-weight:600; }
+  .price-card .amount{ font-family:'Fraunces', serif; font-size:3rem; font-weight:600; margin:8px 0 4px; color:#fff; }
+  .price-card .unit{ font-size:0.85rem; color:rgba(250,246,238,0.6); }
+  .price-card ul{ list-style:none; margin-top:22px; }
+  .price-card li{ display:flex; gap:10px; padding:7px 0; font-size:0.88rem; color:rgba(250,246,238,0.85); }
+  .price-card li .mark{ color:var(--gold-light); font-weight:700; }
+  .price-card .btn-primary{ width:100%; justify-content:center; margin-top:24px; }
+
+  .bank-block{
+    margin-top:16px; padding-top:16px;
+    border-top:1px solid rgba(250,246,238,0.15);
+  }
+  .bank-block .label{ font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; color:rgba(250,246,238,0.5); margin-bottom:8px; }
+  .bank-row{ display:flex; justify-content:space-between; align-items:baseline; font-size:0.85rem; padding:4px 0; color:rgba(250,246,238,0.85); }
+  .bank-row strong{ color:#fff; font-weight:500; letter-spacing:0.02em; }
+
+  /* ---------- PROCESO ---------- */
+  .steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .step{ padding:26px 22px; background:#fff; border:1.5px solid var(--line); border-radius:16px; }
+  .step .num{ font-family:'Fraunces', serif; font-style:italic; font-size:1.6rem; color:var(--gold); font-weight:600; }
+  .step h3{ font-family:'Fraunces', serif; font-size:1.1rem; margin:10px 0 8px; color:var(--navy); font-weight:600; }
+  .step p{ font-size:0.88rem; color:#5A5346; line-height:1.55; }
+
+  /* ---------- FOOTER CTA ---------- */
+  .footer-cta{ text-align:center; padding:70px 24px 90px; }
+  .footer-cta h2{ font-size:clamp(1.8rem, 4vw, 2.6rem); color:var(--navy); font-weight:600; max-width:620px; margin:0 auto; line-height:1.2; }
+  .footer-cta p{ margin-top:16px; color:#5A5346; }
+  .footer-cta .btn-primary{ margin-top:28px; padding:17px 34px; font-size:1rem; }
+  footer{ text-align:center; padding:26px 24px 40px; font-size:0.78rem; color:#8A8272; border-top:1px solid var(--line); }
+
+  @media (max-width:860px){
+    .hero-inner{ grid-template-columns:1fr; }
+    .phone-stage{ order:-1; margin-bottom:20px; }
+    .phone{ transform:rotate(0deg); width:240px; height:490px; }
+    .split{ grid-template-columns:1fr; }
+    .price-grid{ grid-template-columns:1fr; }
+    .steps{ grid-template-columns:1fr; }
+    .hero{ padding-top:40px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand">tu<em>negocio</em>.page</div>
+    <a class="nav-cta" href="https://wa.me/523339675255?text=Hola%2C%20quiero%20mi%20p%C3%A1gina%20desde%20%242%2C900" target="_blank" rel="noopener">
+      WhatsApp directo →
+    </a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <div class="eyebrow">Para negocios locales</div>
+      <h1>La gente ya te busca en Google.<br><span class="accent">Que te encuentre.</span></h1>
+      <p class="lead">Te hago una página para tu negocio: fotos, ubicación, botón directo a tu WhatsApp y todo lo que necesitas para que un cliente nuevo te contacte en un clic — no en cinco.</p>
+      <div class="price-badge">
+        <span class="from">Desde</span>
+        <span class="amount">$2,900</span>
+        <span class="from">MXN</span>
+      </div>
+      <div class="hero-ctas">
+        <a class="btn-primary" href="#precio">Ver qué incluye →</a>
+        <a class="btn-secondary" href="https://wa.me/523339675255" target="_blank" rel="noopener">Preguntar por WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="phone-stage">
+      <div style="position:relative;">
+        <div class="demo-tag">así se vería</div>
+        <div class="phone">
+          <div class="phone-screen">
+            <div class="demo-hero">
+              <div class="biz">Taquería El Buen Sazón</div>
+              <div class="tag">Tacos al pastor · Zapopan</div>
+              <div class="cta">💬 Pedir por WhatsApp</div>
+            </div>
+            <div class="demo-body">
+              <div class="demo-row">
+                <div class="demo-photo"></div>
+                <div class="demo-photo"></div>
+                <div class="demo-photo"></div>
+              </div>
+              <div class="demo-info">
+                <div class="line"><strong>Horario:</strong> 6pm – 1am</div>
+                <div class="line"><strong>Ubicación:</strong> Av. Patria 1450</div>
+                <div class="line"><strong>Servicio:</strong> Para llevar y domicilio</div>
+              </div>
+              <div class="demo-map"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="incluye">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Sin letras chiquitas</div>
+      <h2>Qué lleva tu página y qué no</h2>
+      <p>Te lo digo claro desde antes, para que sepas exactamente en qué se te va tu dinero.</p>
+    </div>
+    <div class="split">
+      <div class="card yes">
+        <h3>✓ Incluido en el precio base</h3>
+        <ul>
+          <li><span class="mark">✓</span><span>Dominio propio incluido (tunegocio.com) — eliges entre tres opciones de nombre disponibles</span></li>
+          <li><span class="mark">✓</span><span>Diseño de una página, hecha a la medida de tu negocio (no una plantilla genérica)</span></li>
+          <li><span class="mark">✓</span><span>Botón directo a tu WhatsApp para que te escriban sin buscar tu número</span></li>
+          <li><span class="mark">✓</span><span>Espacio para tus fotos (hasta 6), las que tú me pases</span></li>
+          <li><span class="mark">✓</span><span>Tus datos de contacto, horario y ubicación con mapa</span></li>
+          <li><span class="mark">✓</span><span>Versión que se ve bien en el celular, que es donde te van a encontrar</span></li>
+          <li><span class="mark">✓</span><span>Una ronda de ajustes después de la primera entrega</span></li>
+        </ul>
+      </div>
+      <div class="card no">
+        <h3>+ Se cotiza aparte</h3>
+        <ul>
+          <li><span class="mark">+</span><span>Dominio especial o difícil de conseguir (si ninguna de las tres opciones te convence)</span></li>
+          <li><span class="mark">+</span><span>Video promocional o sesión de fotos profesional</span></li>
+          <li><span class="mark">+</span><span>Catálogo con más de 6 productos o menú con precios editable por ti</span></li>
+          <li><span class="mark">+</span><span>Formulario de contacto que te mande los datos a tu correo o Excel</span></li>
+          <li><span class="mark">+</span><span>Integración con redes (Instagram feed en vivo, Facebook Pixel, etc.)</span></li>
+          <li><span class="mark">+</span><span>Traducción a inglés u otro idioma</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="note">
+      <strong>¿Por qué "desde"?</strong> Porque una página para una taquería no es lo mismo que una para un consultorio con 20 servicios. Te cotizo exacto después de ver qué necesitas — sin sorpresas.
+    </div>
+    <div class="note">
+      <strong>¿Y el dominio (tunegocio.com)?</strong> Sí va incluido — te doy a elegir entre tres opciones de nombre disponibles para tu negocio. Si quieres un dominio en específico o uno más difícil de conseguir, ese costo extra se cotiza aparte.
+    </div>
+  </div>
+</section>
+
+<section id="precio">
+  <div class="price-section">
+    <div class="wrap price-grid">
+      <div>
+        <h2>Precio simple, para que decidas rápido</h2>
+        <p>La mayoría de los negocios (talleres, salones, tiendas, restaurantes, servicios) caben en el paquete base. Si tu caso es más grande, te cotizo antes de empezar — nunca después.</p>
+        <p>El pago se hace en dos partes: 50% de anticipo para arrancar y 50% contra entrega, cuando ya la viste lista y te gustó.</p>
+      </div>
+      <div class="price-card">
+        <div class="from">Paquete base</div>
+        <div class="amount">$2,900</div>
+        <div class="unit">pesos mexicanos, pago único</div>
+        <ul>
+          <li><span class="mark">✓</span> Dominio incluido (3 opciones a elegir)</li>
+          <li><span class="mark">✓</span> Página lista en 3 a 5 días</li>
+          <li><span class="mark">✓</span> Diseño a tu medida, no plantilla</li>
+          <li><span class="mark">✓</span> Botón de WhatsApp integrado</li>
+          <li><span class="mark">✓</span> Hasta 6 fotos de tu negocio</li>
+          <li><span class="mark">✓</span> Una ronda de ajustes incluida</li>
+        </ul>
+        <a class="btn-primary" href="https://wa.me/523339675255?text=Hola%2C%20quiero%20cotizar%20mi%20p%C3%A1gina" target="_blank" rel="noopener">Cotizar la mía →</a>
+        <div class="bank-block">
+          <div class="label">También por transferencia</div>
+          <div class="bank-row"><span>Banco</span><strong>Citibanamex</strong></div>
+          <div class="bank-row"><span>CLABE</span><strong>0023 2070 2133 3528 47</strong></div>
+          <div class="bank-row"><span>A nombre de</span><strong>Rafael García Grado</strong></div>
+          <div class="bank-row" style="margin-top:6px; opacity:0.7; font-size:0.78rem;"><span>50% anticipo · 50% contra entrega</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proceso">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Cómo funciona</div>
+      <h2>De la idea a tu página, en tres pasos</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">Uno</div>
+        <h3>Me cuentas de tu negocio</h3>
+        <p>Por WhatsApp me pasas tus fotos, tu horario, ubicación y qué quieres que la gente vea primero.</p>
+      </div>
+      <div class="step">
+        <div class="num">Dos</div>
+        <h3>Te la entrego para revisar</h3>
+        <p>En 3 a 5 días tienes un enlace para verla en tu celular, tal como la va a ver tu cliente.</p>
+      </div>
+      <div class="step">
+        <div class="num">Tres</div>
+        <h3>Ajustamos y queda lista</h3>
+        <p>Una ronda de cambios incluida. Cuando estés conforme, queda publicada y funcionando.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="footer-cta">
+  <h2>Tu negocio ya existe.<br>Que en internet también se note.</h2>
+  <p>Mándame un WhatsApp y en un día te digo exactamente qué necesita tu página y cuánto cuesta la tuya.</p>
+  <a class="btn-primary" href="https://wa.me/523339675255?text=Hola%2C%20quiero%20mi%20p%C3%A1gina%20desde%20%242%2C900" target="_blank" rel="noopener">Escribir por WhatsApp →</a>
+</section>
+
+<footer>
+  tunegocio.page — hecho por Rafael García · Zapopan, Jalisco
+</footer>
+
+</body>
+</html>
