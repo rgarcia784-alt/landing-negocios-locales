@@ -46,6 +46,28 @@
   .footer-cta a.btn{ display:inline-flex; background:var(--navy); color:var(--paper); padding:15px 30px; border-radius:100px; font-weight:600; text-decoration:none; font-size:0.95rem; }
   footer{ text-align:center; padding:22px 24px 36px; font-size:0.76rem; color:#8A8272; border-top:1px solid var(--line); margin-top:14px; }
   footer a{ color:var(--navy); text-decoration:none; font-weight:600; }
+
+  .register-banner{
+    margin:14px auto 0; max-width:640px;
+    background:linear-gradient(135deg, var(--navy), var(--navy-2)); border-radius:16px;
+    padding:22px 24px; text-align:center; color:#fff;
+  }
+  .register-banner p{ font-size:0.9rem; opacity:0.9; margin-top:6px; line-height:1.5; }
+  .register-banner strong{ font-family:'Fraunces',serif; font-size:1.05rem; color:var(--gold-light); }
+  .register-banner a.btn-mini{
+    display:inline-flex; margin-top:14px; background:var(--gold); color:var(--navy);
+    padding:11px 22px; border-radius:100px; font-weight:600; font-size:0.85rem; text-decoration:none;
+  }
+
+  .card-tag{ margin-top:14px; font-size:0.75rem; opacity:0.7; letter-spacing:0.02em; }
+
+  .share-btn{
+    display:inline-flex; align-items:center; gap:7px; margin-top:14px;
+    background:rgba(255,255,255,0.12); color:#fff; border:1px solid rgba(255,255,255,0.25);
+    padding:9px 18px; border-radius:100px; font-size:0.8rem; font-weight:500;
+    font-family:'Outfit',sans-serif; cursor:pointer; transition:background .15s ease;
+  }
+  .share-btn:hover{ background:rgba(255,255,255,0.2); }
 </style>
 </head>
 <body>
@@ -56,6 +78,7 @@
     <h1>Carpintería Maderas del Bosque</h1>
     <p class="tag">Muebles a la medida, closets y trabajos en madera</p>
     <a class="cta-whatsapp" href="https://wa.me/5214431234567" target="_blank" rel="noopener">💬 Pedir una cotización</a>
+    <button class="share-btn" onclick="compartirPagina('Carpintería Maderas del Bosque')">📇 Compartir como tarjeta de presentación</button>
   </div>
 </header>
 
@@ -101,13 +124,31 @@
   <p>Este negocio forma parte del <a href="directorio.html">Directorio Nacional de tunegocio.page</a> — donde la gente encuentra negocios locales con página propia en toda la República.</p>
 </div>
 
+<div class="register-banner">
+  <strong>¿Tienes tu propio negocio?</strong>
+  <p>Consigue tu mini landing page y tu lugar en el directorio nacional, igual que este.</p>
+  <a class="btn-mini" href="https://wa.me/523339675255?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Carpinter%C3%ADa%20Maderas%20del%20Bosque%20y%20quiero%20la%20m%C3%ADa%20tambi%C3%A9n" target="_blank" rel="noopener">Quiero la mía →</a>
+</div>
+
 <div class="footer-cta">
   <a class="btn" href="https://wa.me/5214431234567" target="_blank" rel="noopener">Contactar a Carpintería Maderas del Bosque →</a>
 </div>
 
 <footer>
-  Página de ejemplo hecha con <a href="#">tunegocio.page</a> — ¿tienes un negocio? crea la tuya
+  Página de ejemplo hecha con <a href="index.html">tunegocio.page</a>
 </footer>
 
+
+<script>
+  function compartirPagina(nombre){
+    const url = window.location.href;
+    const texto = `Mira la página de ${nombre}, hecha con tunegocio.page:`;
+    if (navigator.share) {
+      navigator.share({ title: nombre, text: texto, url: url }).catch(()=>{});
+    } else {
+      window.open(`https://wa.me/?text=${encodeURIComponent(texto + ' ' + url)}`, '_blank');
+    }
+  }
+</script>
 </body>
 </html>
