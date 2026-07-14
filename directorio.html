@@ -87,7 +87,12 @@
     display:flex; flex-direction:column; transition:transform .15s ease, box-shadow .15s ease;
   }
   .card:hover{ transform:translateY(-3px); box-shadow:0 14px 30px -12px rgba(18,33,59,0.18); }
-  .card-cover{ height:110px; display:flex; align-items:center; justify-content:center; }
+  .card-cover{ height:110px; display:flex; align-items:center; justify-content:center; position:relative; }
+  .example-badge{
+    position:absolute; top:10px; right:10px; background:rgba(255,255,255,0.9); color:var(--navy);
+    font-size:0.65rem; font-weight:700; letter-spacing:0.03em; text-transform:uppercase;
+    padding:4px 9px; border-radius:100px;
+  }
   .card-cover span{ font-family:'Fraunces',serif; font-weight:600; font-size:1.4rem; color:#fff; }
   .card-body{ padding:18px 20px 20px; }
   .card-cat{ font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--green); font-weight:600; margin-bottom:6px; }
@@ -171,7 +176,7 @@
   <div class="wrap">
     <div class="results-head">
       <h2>Negocios en el directorio</h2>
-      <span class="results-count" id="results-count">Mostrando 10 de 10</span>
+      <span class="results-count" id="results-count">Mostrando 7 de 7</span>
     </div>
 
     <div class="grid" id="grid"></div>
@@ -201,24 +206,15 @@ const ESTADOS_MUNICIPIOS = {"Aguascalientes":["Aguascalientes","Asientos","Calvi
 
 const NEGOCIOS = [
   {
-    nombre: "Taquería El Buen Sazón",
-    categoria: "Restaurante",
-    estado: "Jalisco",
-    municipio: "Zapopan",
-    colonia: "Providencia",
-    color: "linear-gradient(160deg, #7A2E2E, #A8452F)",
-    inicial: "TB",
-    url: "#"
-  },
-  {
     nombre: "Plomería Hernández",
-    categoria: "Plomería",
+    categoria: "Fontanero / Plomero",
     estado: "Ciudad de México",
     municipio: "Benito Juárez",
     colonia: "Del Valle",
     color: "linear-gradient(160deg, #2E4E6B, #3E6B8A)",
     inicial: "PH",
-    url: "#"
+    url: "plomeria-hernandez.html",
+    ejemplo: true
   },
   {
     nombre: "Electricidad Total",
@@ -228,67 +224,52 @@ const NEGOCIOS = [
     colonia: "Del Carmen",
     color: "linear-gradient(160deg, #6B5E2E, #998A3E)",
     inicial: "ET",
-    url: "#"
-  },
-  {
-    nombre: "Salón Bella Vida",
-    categoria: "Estética y belleza",
-    estado: "Nuevo León",
-    municipio: "Monterrey",
-    colonia: "Centro",
-    color: "linear-gradient(160deg, #6B3E5E, #8A5580)",
-    inicial: "BV",
-    url: "#"
-  },
-  {
-    nombre: "Abarrotes Don Beto",
-    categoria: "Tienda de abarrotes",
-    estado: "Puebla",
-    municipio: "Puebla",
-    colonia: "La Paz",
-    color: "linear-gradient(160deg, #3E6B4E, #5A8A66)",
-    inicial: "AB",
-    url: "#"
+    url: "electricista-ejemplo.html",
+    ejemplo: true
   },
   {
     nombre: "Taller El Tornillo",
-    categoria: "Taller mecánico",
+    categoria: "Mecánico",
     estado: "México",
     municipio: "Toluca",
     colonia: "San Sebastián",
     color: "linear-gradient(160deg, #4A4438, #6B6455)",
     inicial: "TT",
-    url: "#"
+    url: "mecanico-ejemplo.html",
+    ejemplo: true
   },
   {
-    nombre: "Lavandería Aqua Fresh",
-    categoria: "Lavandería",
+    nombre: "Carpintería Maderas del Bosque",
+    categoria: "Carpintero",
+    estado: "Michoacán de Ocampo",
+    municipio: "Morelia",
+    colonia: "Chapultepec",
+    color: "linear-gradient(160deg, #5A4030, #7A5A3E)",
+    inicial: "MB",
+    url: "carpintero-ejemplo.html",
+    ejemplo: true
+  },
+  {
+    nombre: "Pinturas y Acabados López",
+    categoria: "Pintor",
+    estado: "Nuevo León",
+    municipio: "San Pedro Garza García",
+    colonia: "Del Valle",
+    color: "linear-gradient(160deg, #6B3E2E, #99593E)",
+    inicial: "PL",
+    url: "pintor-ejemplo.html",
+    ejemplo: true
+  },
+  {
+    nombre: "Arq. Fernanda Solís",
+    categoria: "Arquitecto",
     estado: "Jalisco",
     municipio: "Guadalajara",
-    colonia: "Chapalita",
-    color: "linear-gradient(160deg, #2E5E6B, #3E8299)",
-    inicial: "AF",
-    url: "#"
-  },
-  {
-    nombre: "Clínica Veterinaria PataAmiga",
-    categoria: "Veterinaria",
-    estado: "Coahuila de Zaragoza",
-    municipio: "Saltillo",
-    colonia: "República",
-    color: "linear-gradient(160deg, #3E6B5A, #529178)",
-    inicial: "PA",
-    url: "#"
-  },
-  {
-    nombre: "Consultorio Dr. Ramírez",
-    categoria: "Médico general",
-    estado: "Querétaro",
-    municipio: "Querétaro",
-    colonia: "Milenio",
-    color: "linear-gradient(160deg, #2E3E6B, #3E5299)",
-    inicial: "DR",
-    url: "#"
+    colonia: "Colonia Americana",
+    color: "linear-gradient(160deg, #6B5E4A, #8A7A5E)",
+    inicial: "FS",
+    url: "arquitecto-ejemplo.html",
+    ejemplo: true
   },
   {
     nombre: "Asesoría Inmobiliaria Torres",
@@ -298,7 +279,8 @@ const NEGOCIOS = [
     colonia: "Puerta de Hierro",
     color: "linear-gradient(160deg, #4A3E2E, #6B5A3E)",
     inicial: "IT",
-    url: "#"
+    url: "asesor-inmobiliario-ejemplo.html",
+    ejemplo: true
   }
 ];
 
@@ -341,8 +323,9 @@ function renderCards(lista){
     lista.forEach(n => {
       const card = document.createElement('div');
       card.className = 'card';
+      const badge = n.ejemplo ? '<span class="example-badge">Ejemplo</span>' : '';
       card.innerHTML = `
-        <div class="card-cover" style="background:${n.color}"><span>${n.inicial}</span></div>
+        <div class="card-cover" style="background:${n.color}">${badge}<span>${n.inicial}</span></div>
         <div class="card-body">
           <div class="card-cat">${n.categoria}</div>
           <div class="card-name">${n.nombre}</div>
